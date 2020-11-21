@@ -9,6 +9,7 @@ import com.poclab.coviddiary.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -30,7 +31,6 @@ public class SignUpService {
     }
 
     Patient patient = patientMapper.toEntity(patientDto);
-    patient.setCreatedOn(new Date());
     patient.setDoctor(doctor.get());
     patientRepository.save(patient);
   }

@@ -5,12 +5,12 @@ import com.poclab.coviddiary.entity.Questionnaire;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
-@Mapper(componentModel = "spring", imports = {Date.class})
+@Mapper(componentModel = "spring", imports = {LocalDateTime.class})
 public interface QuestionnaireMapper {
 
-  @Mapping(target = "submittedOn", expression = "java(new Date())")
+  @Mapping(target = "submittedOn", expression = "java(LocalDateTime.now())")
   Questionnaire toEntity(QuestionnaireDto dto);
 
 }

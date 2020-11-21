@@ -8,6 +8,7 @@ import com.poclab.coviddiary.mapper.QuestionnaireMapper;
 import com.poclab.coviddiary.repository.PatientRepository;
 import com.poclab.coviddiary.repository.QuestionnaireRepository;
 import com.poclab.coviddiary.repository.TokenRepository;
+import com.poclab.coviddiary.util.DateUtils;
 import com.poclab.coviddiary.util.EmailUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -72,6 +73,10 @@ public class QuestionnaireService {
 
     boolean wasFeverPresentLastTime = getLastReportedFever(patient);
     if (dryCough || (wasFeverPresentLastTime && fever)) {
+      return HealthStatus.MEDIUM;
+    }
+
+    if (fever && DateUtils.calculateAge(patient.getDateOfBirth()) >= 60) {
       return HealthStatus.MEDIUM;
     }
 

@@ -3,6 +3,8 @@ package com.poclab.coviddiary.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Column;
@@ -42,13 +44,13 @@ public class Patient {
   private double height;
 
   @Column(name = "DATE_OF_BIRTH")
-  private Date dateOfBirth;
+  private LocalDate dateOfBirth;
 
   @Column(name = "CREATED_ON")
-  private Date createdOn;
+  private LocalDateTime createdOn;
 
   @Column(name = "TEST_DATE")
-  private Date testDate;
+  private LocalDateTime testDate;
 
   @ManyToOne
   @JoinColumn(name = "DOCTOR_ID", referencedColumnName = "ID", nullable = false)

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -42,6 +43,6 @@ public class Questionnaire {
   private boolean dryCough;
 
   @Column(name = "SUBMITTED_ON")
-  private Date submittedOn;
+  private LocalDateTime submittedOn;
 
 }
