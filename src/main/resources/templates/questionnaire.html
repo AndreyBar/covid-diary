@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Covid Diary</title>
+    <link rel="stylesheet" href="assets/css/boostrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<style type="text/css">
+    img {
+        width: 180px;
+        height: 150px;
+    }
+</style>
+<body>
+
+    <!-- Get Started -->
+    <div class="getstarted">
+        <!-- header -->
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                </div>
+            </div>
+        </header>
+        <!-- ./END  -->
+        <div class="getstarted-col">
+            <img src="assets/images/logo.png" alt="Logo">
+            <div class="user-data">
+                <div class="user-name">
+                    <p>Marco Botton</p>
+                </div>
+                <div class="date-timing">
+                    <span class="date">Oct 9, 2020</span>
+                    <span class="time">11:30 AM</span>
+                </div>
+            </div>
+            <div class="info">
+                <p>Recommendations provided do not constitude as medical advice and should not be used to diagnose or treat medical conditions</p>
+            </div>
+            <div class="btn-block">
+                <a href="javascript:void(0);" class="custom-btn getStart">Get Started</a>
+            </div>
+            <div class="footer">
+                <p>The protection of your personal data is a high priority. Your information will not be disclosed to third parties without your express consent</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form steps -->
+    <div class="form-container firstStep display-none">
+        <!-- header -->
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                </div>
+            </div>
+        </header>
+        <!-- ./END  -->
+        <div class="form-data-wrapper">
+            <!-- step one -->
+            <div class="form-data-inner stepOneInner">
+                <div class="progress-bar-main">
+                    <div class="progress-bar-bg">
+                        <div class="progress-size" style="width: 20%;"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <p>Question<span>1</span>/4</p>
+                    </div>
+                </div>
+                <div class="selection-col">
+                    <h3>Do you have shortness of breath or difficulty breathing without cough?</h3>
+
+                    <div class="action-block">
+                        <a href="javascript:void(0);" onclick="shortnessYes()" class="secondry-btn yesButton" step="one">Yes</a>
+                        <a href="javascript:void(0);" onclick="shortnessNo()" class="secondry-btn noButton" step="one">No</a>
+                    </div>
+                    <div class="next-btn-mobile stepOneNextBackSec display-none">
+                        <a href="javascript:void(0);" class="next-btn nextStepOne">Next</a>
+                    </div>
+                </div>
+
+                <div class="nex-back-actionblock stepOneNextBackSec display-none">
+                    <button class="next-btn nextStepOne">Next</button>
+                    <a href="javascript:void(0);" class="back-btn backGetstart">Back</a>
+                </div>
+            </div>
+            <!-- step two -->
+            <div class="form-data-inner stepTwoInner">
+                <div class="progress-bar-main">
+                    <div class="progress-bar-bg">
+                        <div class="progress-size" style="width: 30%;"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <p>Question <span>2</span>/4</p>
+                    </div>
+                </div>
+                <div class="selection-col">
+                    <h3>Do you have fever more than 38°C? </h3>
+
+                    <div class="action-block">
+                        <a href="javascript:void(0);" onclick="feverYes()" class="secondry-btn yesButton" step="two">Yes</a>
+                        <a href="javascript:void(0);" onclick="feverNo()" class="secondry-btn noButton" step="two">No</a>
+                    </div>
+                    <div class="next-btn-mobile stepTwoNextBackSec display-none">
+                        <a href="javascript:void(0);" class="next-btn nextStepTwo">Next</a>
+                    </div>
+                </div>
+
+                <div class="nex-back-actionblock stepTwoNextBackSec display-none">
+                    <a href="javascript:void(0);" class="next-btn nextStepTwo">Next</a>
+                    <a href="javascript:void(0);" class="back-btn backStepTwoButton">Back</a>
+                </div>
+            </div>
+            <!-- step three -->
+            <div class="form-data-inner stepThreeInner">
+                <div class="progress-bar-main">
+                    <div class="progress-bar-bg">
+                        <div class="progress-size" style="width: 50%;"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <p>Question <span>3</span>/4</p>
+                    </div>
+                </div>
+                <div class="selection-col">
+                    <h3>Do you have dry cough? </h3>
+
+                    <div class="action-block">
+                        <a href="javascript:void(0);" onclick="coughYes()" class="secondry-btn yesButton" step="three">Yes</a>
+                        <a href="javascript:void(0);" onclick="coughNo()" class="secondry-btn noButton" step="three">No</a>
+                    </div>
+                    <div class="next-btn-mobile stepThreeNextBackSec  display-none">
+                        <a href="javascript:void(0);" class="next-btn nextStepThree">Next</a>
+                    </div>
+                </div>
+
+                <div class="nex-back-actionblock stepThreeNextBackSec  display-none">
+                    <a href="javascript:void(0);" class="next-btn nextStepThree">Next</a>
+                    <a href="javascript:void(0);" class="back-btn backStepThreeButton">Back</a>
+                </div>
+            </div>
+            <!-- step four -->
+            <div class="form-data-inner stepFourInner">
+                <div class="progress-bar-main">
+                    <div class="progress-bar-bg">
+                        <div class="progress-size" style="width: 70%;"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <p>Question <span>4</span>/4</p>
+                    </div>
+                </div>
+                <div class="selection-col symp-col">
+                    <h3>Please describe your wellbeing and if you are using any medications </h3>
+                    <div class="verify-form-col">
+                            <div class="input-block">
+                                <textarea id="properties" style="width: 100%; height: 250px; padding: 10px 10px 10px 10px; font-family: 'Avenir';"></textarea>
+                            </div>
+                    </div>
+                    <div class="next-btn-mobile stepFourNextBackSec">
+                        <a href="javascript:void(0);" class="next-btn nextStepFour">Next</a>
+                    </div>
+                </div>
+
+
+                <div class="nex-back-actionblock stepFourNextBackSec">
+                    <a href="javascript:void(0);" class="back-btn backStepFourButton">Back</a>
+                </div>
+            </div>
+            <!-- step seven -->
+            <div class="form-data-inner stepSevenInner">
+                <div class="progress-bar-main">
+                    <div class="progress-bar-bg">
+                        <div class="progress-size" style="width: 100%;"></div>
+                    </div>
+                    <div class="progress-steps almost-done">
+                        <p>Almost done!</p>
+                    </div>
+                </div>
+                <div class="selection-col">
+                    <div class="verify-result-heading">
+                        <h3>Covid-19 Health Diary <span class="name">Marco Botton</span> </h3>
+                        <p>I verify the information I have provided on this form is truthful and accurate</p>
+
+                        <div class="verify-btn  mt-0">
+                            <a href="javascript:void(0);" class="custom-btn nextStepSeven">Submit</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="nex-back-actionblock verify-back">
+                    <a href="javascript:void(0);" class="back-btn backStepSevenButton">Back</a>
+                </div>
+            </div>
+            <!-- step eight -->
+            <div class="form-data-inner stepEightInner">
+
+                <div class="selection-col">
+                    <div class="app-message-col">
+                        <img src="assets/images/logo.png" alt="logo">
+                        <p class="app-text">Thank you Marco Button for completing the health check.</p>
+                        <p class="app-text">I am glad that you don't have any of these symptoms, but please monitor your condition regularly and measure your temperature twice a day.<p>
+                        <div class="app-date_time">
+                            <p class="app-date">Date <span>Nov 6</span></p>
+                            <p class="app-time">Time <span> 10:30 AM</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- step nine -->
+            <div class="form-data-inner stepNineInner">
+
+                <div class="selection-col">
+                    <div class="app-message-col">
+                        <img src="assets/images/logo.png" alt="logo">
+                        <p class="app-text">Thank you Marco Button for completing the health check.</p>
+                        <p class="app-text">Unfortunately you are not getting better, please call your GP or emergency department (outside of GP hours) and follow their instructions.<p>
+                        <div class="app-date_time">
+                            <p class="app-date">Date <span>Nov 6</span></p>
+                            <p class="app-time">Time <span> 10:30 AM</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- step ten -->
+            <div class="form-data-inner stepTenInner">
+
+                <div class="selection-col">
+                    <div class="app-message-col">
+                        <img src="assets/images/logo.png" alt="logo">
+                        <p class="app-text">Thank you Marco Button for completing the health check.</p>
+                        <p class="app-text">Call 155 immediately and follow the operator's instructions.<p>
+
+                        <div class="app-date_time">
+                            <p class="app-date">Date <span>Nov 6</span></p>
+                            <p class="app-time">Time <span> 10:30 AM</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var age = 70;
+
+    var shorness = false;
+    var fever = false;
+    var cough = false;
+
+    var feverPreviuos = true;
+
+    var showEasy = false;
+    var showMedium = false;
+    var showEmergency = false;
+
+
+    function shortnessYes() {
+        shorness = true;
+    }
+
+    function shortnessNo() {
+        shorness = false;
+    }
+
+    function feverYes() {
+       fever = true;
+    }
+
+    function feverNo() {
+        fever = false;
+    }
+
+    function coughYes() {
+        cough = true;
+    }
+
+    function coughNo() {
+        cough = false;
+    }
+
+
+    function resultCalculation() {
+        if (shorness && fever && cough) {
+            showEmergency = true;
+            return;
+        } else if ((feverPreviuos && fever)||(age > 60 && (shorness || fever || cough))) {
+            showMedium = true;
+            return;
+        } else {
+            showEasy = true;
+            return;
+        }
+    }
+
+    (function($) {
+    'use strict';
+    // following symptoms button selection
+    $('.selection-btn').on('click', function(event) {
+        $(this).toggleClass('active');
+    })
+
+
+})(jQuery);
+    $(".getStart").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").show();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+    });
+    $(".backGetstart").click(function() {
+        $(".getstarted").show();
+        $(".firstStep").hide();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+    });
+    $(".nextStepOne").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").show();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+
+    });
+    $(".backStepTwoButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").show();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+    });
+    $(".nextStepTwo").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").show();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+
+
+    });
+    $(".backStepThreeButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").show();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+    });
+    $(".nextStepThree").click(function() {
+        resultCalculation();
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        if (showEasy) {
+            $(".stepFourInner").hide();
+            $(".stepSevenInner").show();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if(showMedium) {
+            $(".stepFourInner").show();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if (showEmergency) {
+            $(".stepFourInner").show();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        }
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+
+    });
+    $(".backStepFourButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").show();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+    });
+    $(".nextStepFour").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").show();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+
+
+    });
+    $(".backStepSevenButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        if (showEasy) {
+            $(".stepFourInner").hide();
+            $(".stepSevenInner").show();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if(showMedium) {
+            $(".stepFourInner").show();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if (showEmergency) {
+            $(".stepFourInner").show();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        }
+    });
+    $(".nextStepSeven").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").hide();
+        if (showEasy) {
+            $(".stepEightInner").show();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if(showMedium) {
+            $(".stepEightInner").hide();
+            $(".stepNineInner").show();
+            $(".stepTenInner").hide();
+        } else if (showEmergency) {
+            $(".stepTenInner").show();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+        }
+    });
+    $(".backStepEightButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").show();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+    });
+    $(".backStepNineButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").show();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+    });
+    $(".backStepTenButton").click(function() {
+        $(".getstarted").hide();
+        $(".firstStep").show();
+        $(".stepOneInner").hide();
+        $(".stepTwoInner").hide();
+        $(".stepThreeInner").hide();
+        $(".stepFourInner").hide();
+        $(".stepSevenInner").show();
+        $(".stepEightInner").hide();
+        $(".stepNineInner").hide();
+        $(".stepTenInner").hide();
+    });
+
+    $(".yesButton").click(function() {
+        if ($(this).attr('step') == 'one') {
+            $(".stepOneNextBackSec").show();
+        } else if ($(this).attr('step') == 'two') {
+            $(".stepTwoNextBackSec").show();
+        } else if ($(this).attr('step') == 'three') {
+            $(".stepThreeNextBackSec").show();
+        } else if ($(this).attr('step') == 'four') {
+            $(".stepFourNextBackSec").show();
+            $(".noButtonFour").hide();
+        } 
+
+
+
+    });
+    $(".noButton").click(function() {
+        if ($(this).attr('step') == 'one') {
+            $(".stepOneNextBackSec").hide();
+            $(".getstarted").hide();
+            $(".firstStep").show();
+            $(".stepOneInner").hide();
+            $(".stepTwoInner").show();
+            $(".stepThreeInner").hide();
+            $(".stepFourInner").hide();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if ($(this).attr('step') == 'two') {
+            $(".stepTwoNextBackSec").hide();
+            $(".getstarted").hide();
+            $(".firstStep").show();
+            $(".stepOneInner").hide();
+            $(".stepTwoInner").hide();
+            $(".stepThreeInner").show();
+            $(".stepFourInner").hide();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if ($(this).attr('step') == 'three') {
+            $(".stepThreeNextBackSec").hide();
+            $(".getstarted").hide();
+            $(".firstStep").show();
+            $(".stepOneInner").hide();
+            $(".stepTwoInner").hide();
+            $(".stepThreeInner").hide();
+            $(".stepFourInner").show();
+            $(".stepSevenInner").hide();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } else if ($(this).attr('step') == 'four') {
+            $(".stepFourNextBackSec").hide();
+            $(".getstarted").hide();
+            $(".firstStep").show();
+            $(".stepOneInner").hide();
+            $(".stepTwoInner").hide();
+            $(".stepThreeInner").hide();
+            $(".stepFourInner").hide();
+            $(".stepSevenInner").show();
+            $(".stepEightInner").hide();
+            $(".stepNineInner").hide();
+            $(".stepTenInner").hide();
+        } 
+
+    });
+
+</script>
+</html>

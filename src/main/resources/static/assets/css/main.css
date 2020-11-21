@@ -1,0 +1,871 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Roman.eot');
+    src: local('Avenir Roman'), local('Avenir-Roman'), url('../fonts/Avenir-Roman.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Roman.woff2') format('woff2'), url('../fonts/Avenir-Roman.woff') format('woff'), url('../fonts/Avenir-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Light.eot');
+    src: local('Avenir Light'), local('Avenir-Light'), url('../fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Light.woff2') format('woff2'), url('../fonts/Avenir-Light.woff') format('woff'), url('../fonts/Avenir-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Book';
+    src: url('../fonts/Avenir-BookOblique.eot');
+    src: local('Avenir Book Oblique'), local('Avenir-BookOblique'), url('../fonts/Avenir-BookOblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-BookOblique.woff2') format('woff2'), url('../fonts/Avenir-BookOblique.woff') format('woff'), url('../fonts/Avenir-BookOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir Black Oblique';
+    src: url('../fonts/Avenir-BlackOblique.eot');
+    src: local('Avenir Black Oblique'), local('Avenir-BlackOblique'), url('../fonts/Avenir-BlackOblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-BlackOblique.woff2') format('woff2'), url('../fonts/Avenir-BlackOblique.woff') format('woff'), url('../fonts/Avenir-BlackOblique.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Heavy.eot');
+    src: local('Avenir Heavy'), local('Avenir-Heavy'), url('../fonts/Avenir-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Heavy.woff2') format('woff2'), url('../fonts/Avenir-Heavy.woff') format('woff'), url('../fonts/Avenir-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-HeavyOblique.eot');
+    src: local('Avenir Heavy Oblique'), local('Avenir-HeavyOblique'), url('../fonts/Avenir-HeavyOblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-HeavyOblique.woff2') format('woff2'), url('../fonts/Avenir-HeavyOblique.woff') format('woff'), url('../fonts/Avenir-HeavyOblique.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-MediumOblique.eot');
+    src: local('Avenir Medium Oblique'), local('Avenir-MediumOblique'), url('../fonts/Avenir-MediumOblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-MediumOblique.woff2') format('woff2'), url('../fonts/Avenir-MediumOblique.woff') format('woff'), url('../fonts/Avenir-MediumOblique.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-LightOblique.eot');
+    src: local('Avenir Light Oblique'), local('Avenir-LightOblique'), url('../fonts/Avenir-LightOblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-LightOblique.woff2') format('woff2'), url('../fonts/Avenir-LightOblique.woff') format('woff'), url('../fonts/Avenir-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir Book';
+    src: url('../fonts/Avenir-Book.eot');
+    src: local('Avenir Book'), local('Avenir-Book'), url('../fonts/Avenir-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Book.woff2') format('woff2'), url('../fonts/Avenir-Book.woff') format('woff'), url('../fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Black.eot');
+    src: local('Avenir Black'), local('Avenir-Black'), url('../fonts/Avenir-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Black.woff2') format('woff2'), url('../fonts/Avenir-Black.woff') format('woff'), url('../fonts/Avenir-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Oblique.eot');
+    src: local('Avenir Oblique'), local('Avenir-Oblique'), url('../fonts/Avenir-Oblique.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Oblique.woff2') format('woff2'), url('../fonts/Avenir-Oblique.woff') format('woff'), url('../fonts/Avenir-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Medium.eot');
+    src: local('Avenir Medium'), local('Avenir-Medium'), url('../fonts/Avenir-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir-Medium.woff2') format('woff2'), url('../fonts/Avenir-Medium.woff') format('woff'), url('../fonts/Avenir-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    transition: all .3s;
+    text-decoration: none;
+}
+
+
+/* Get started */
+
+.header {
+    width: 100%;
+    padding: 0 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 9px rgba(156, 166, 203, 0.15);
+}
+
+.logo img {
+    width: 120px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.getstarted-col {
+    width: 100%;
+    margin: 111px 0 90px;
+    text-align: center;
+}
+
+.getstarted-col h3 {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #646D8F;
+    margin-top: 39px;
+}
+
+.getstarted-col .user-data {
+    width: 100%;
+    padding: 34px 0;
+    background: #F5F6FA;
+    margin: 91px 0 0;
+}
+
+.getstarted-col .user-data .user-name p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 17px;
+}
+
+.getstarted-col .user-data .date-timing span {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: #646D8F;
+}
+
+.getstarted-col .user-data .date-timing .date {
+    margin-right: 18px;
+}
+
+.getstarted-col .info {
+    width: 38%;
+    margin: 31px auto 37px;
+}
+
+.getstarted-col .info p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: #646D8F;
+}
+
+.custom-btn {
+    width: 186px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-radius: 44px;
+    border: 0px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all .3s;
+    margin: 0 auto;
+}
+
+.custom-btn:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.getstarted-col .footer {
+    width: 37%;
+    margin: 270px auto 0;
+}
+
+.getstarted-col .footer p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #CFD2E2;
+}
+
+
+/* Steps */
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #F5F6FA;
+}
+
+.form-data-inner {
+    position: relative;
+    width: 700px;
+    margin: 59px auto 0;
+    padding-bottom: 60px;
+    display: block;
+    z-index: 0;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 16px;
+    background: rgba(207, 210, 226, .25);
+    border-radius: 54px;
+}
+
+.progress-size {
+    height: 16px;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-radius: 54px;
+    transition: width ease .3s;
+}
+
+.progress-steps {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.progress-steps p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #646D8F;
+}
+
+.progress-steps p span {
+    font-size: 24px;
+}
+
+.selection-col {
+    position: relative;
+    width: 100%;
+    margin: 73px 0 0;
+    background: #fff;
+    box-shadow: 0px 3px 9px rgba(156, 166, 203, 0.25);
+    border-radius: 24px;
+    padding: 79px 67px 79px;
+}
+
+.selection-col.symp-col {
+    padding: 79px 45px 59px;
+}
+
+.selection-col.symp-col .action-block {
+    margin: 32px auto 0;
+}
+
+.selection-col.symp-col .action-block .secondry-btn {
+    margin-bottom: 0px;
+}
+
+.selection-col::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 654px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 9px rgba(156, 166, 203, 0.25);
+    border-radius: 24px;
+    margin: auto;
+    display: block;
+    z-index: -1;
+}
+
+.selection-col::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 607px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 9px rgba(156, 166, 203, 0.25);
+    border-radius: 24px;
+    margin: auto;
+    display: block;
+    z-index: -2;
+}
+
+.selection-col h3 {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 180%;
+    text-align: center;
+    color: #212121;
+}
+
+.action-block {
+    width: 100%;
+    display: block;
+    margin: 92px auto 0;
+}
+
+.action-block .secondry-btn {
+    width: 263px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    background: #FFFFFF;
+    border: 2px solid #CFD2E2;
+    box-sizing: border-box;
+    border-radius: 56px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #CFD2E2;
+    margin: 0 auto 32px;
+}
+
+.action-block .secondry-btn:hover,
+.action-block .secondry-btn:focus {
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    color: #fff;
+    border: 0px;
+}
+
+.action-block .secondry-btn:hover {
+    text-decoration: none;
+}
+
+.nex-back-actionblock {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 73px auto 0;
+    transition: all .3s;
+}
+
+.nex-back-actionblock .next-btn {
+    width: 170px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-radius: 44px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto 0;
+    border: 0px;
+}
+
+.nex-back-actionblock .back-btn {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 180%;
+    text-align: center;
+    color: #CFD2E2;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nex-back-actionblock a:hover {
+    text-decoration: none;
+}
+
+.symptoms-select-col {
+    width: 100%;
+    margin-top: 44px;
+}
+
+.symptoms-select-col a {
+    position: relative;
+    background: #FFFFFF;
+    border: 2px solid #CFD2E2;
+    border-radius: 12px;
+    padding: 10px 17px;
+    color: #646D8F;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 205.6%;
+    display: inline-block;
+    margin: 0px 3px 16px;
+}
+
+.symptoms-select-col a:hover {
+    text-decoration: none;
+}
+
+.symptoms-select-col a.active {
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border: 0px;
+    color: #fff;
+    padding-right: 40px;
+}
+
+.symptoms-select-col a.active:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    display: block;
+    margin: auto 0;
+    width: 12px;
+    height: 12px;
+    background: url(../images/close.svg) no-repeat;
+    background-size: cover;
+}
+
+.progress-steps.almost-done p {
+    font-weight: 300;
+}
+
+.verify-result-heading h3 {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: #212121;
+}
+
+.verify-result-heading h3 .negative {
+    color: #0094A2;
+    margin: 5px;
+}
+
+.verify-result-heading h3 .positive {
+    color: #F48122;
+    margin: 5px;
+}
+
+.verify-result-heading p {
+    font-family: 'Avenir';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+    text-align: center;
+    color: #212121;
+    margin-top: 42px;
+}
+
+.selection-col .verify-btn {
+    margin-top: 200px;
+}
+
+.selection-col .verify-btn .custom-btn {
+    width: 138px;
+}
+
+.nex-back-actionblock.verify-back {
+    margin-top: 38px;
+}
+
+.verify-form-col {
+    width: 100%;
+    margin: 25px auto 50px;
+    text-align: center;
+    display: block;
+}
+
+.verify-form-col .input-block {
+    width: 100%;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.verify-form-col .input-block label {
+    text-align: center;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #212121;
+    width: 60px;
+}
+
+.verify-form-col .input-block input {
+    background: rgba(207, 210, 226, .25);
+    border-radius: 6px;
+    padding: 10px 33px;
+    width: 233px;
+    border: 0px;
+    height: 38px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    color: #646D8F;
+}
+
+.app-message-col {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 0 100px;
+}
+
+.app-date_time {
+    margin-top: 10%;
+}
+
+.app-date_time p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #646D8F;
+    margin: 0 auto 8px;
+    width: 25%;
+    text-align: left;
+}
+
+.app-date_time p span {
+    margin-left: 8px;
+}
+
+.app-message-col .app-text {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #646D8F;
+    margin: 52px auto 19px;
+    padding: 0 75px;
+}
+
+.app-message-col.reschedule-app {
+    padding-bottom: 0;
+}
+
+.selection-col.reschedule-app-col {
+    padding-bottom: 43px;
+}
+
+.reschedule-app-msg p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 0;
+}
+
+.selection-col.reschedule-app-col .reschedule-app-msg {
+    margin-top: 114px;
+}
+
+@media(max-width:768px) {
+    .header {
+        display: none;
+    }
+    .getstarted-col {
+        margin: 109px 0 71px;
+        text-align: center;
+    }
+    .getstarted-col h3 {
+        margin-top: 31px;
+    }
+    .getstarted-col .user-data {
+        padding: 21px 0;
+        margin: 55px 0 0;
+    }
+    .getstarted-col .info {
+        width: 100%;
+        margin: 31px auto 39px;
+        padding: 0 28px;
+    }
+    .custom-btn {
+        width: 138px;
+    }
+    .getstarted-col .footer {
+        width: 100%;
+        margin: 87px auto 0;
+        padding: 0 28px;
+    }
+    .form-data-inner {
+        position: relative;
+        width: 100%;
+        margin: 0px auto 0;
+        padding: 40px 24px 40px;
+    }
+    .selection-col {
+        margin: 16px 0 0;
+        border-radius: 24px;
+        padding: 79px 32px 79px;
+    }
+    .selection-col::before {
+        width: 90%;
+    }
+    .selection-col::after {
+        width: 80%;
+    }
+    .action-block {
+        margin: 71px auto 0;
+    }
+    .nex-back-actionblock .next-btn {
+        display: none;
+    }
+    .nex-back-actionblock {
+        margin: 21px auto 0;
+    }
+    .app-message-col .app-text {
+        margin: 43px auto 19px;
+        padding: 0px 30px;
+    }
+    .app-date_time p {
+        width: 100%;
+        text-align: center;
+    }
+    .selection-col.symp-col {
+        padding: 57px 16px 59px;
+    }
+    .action-block .secondry-btn {
+        width: 100%;
+    }
+}
+
+@media(min-width:768px) {
+    .next-btn-mobile {
+        display: none !important;
+    }
+}
+
+.next-btn-mobile {
+    width: 100%;
+    text-align: center;
+    margin: 60px 0 0;
+}
+
+.next-btn-mobile .next-btn {
+    width: 138px;
+    height: 48px;
+    display: block;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-radius: 44px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto 0;
+    padding: 14px 0;
+    text-decoration: none;
+}
+
+
+/* Full form */
+
+.header.header-two {
+    background: #F5F6FA;
+    box-shadow: none;
+}
+
+.full-form-container .full-form-inner {
+    width: 55%;
+    padding: 80px 0 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.full-form-inner h3 {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 180%;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 25px;
+}
+
+.full-form-inner .block-1,
+.full-form-inner .block-2,
+.full-form-inner .block-3 {
+    margin-bottom: 40px;
+}
+
+.secondry-btn-two {
+    width: 144px;
+    height: 44px;
+    display: inline-block;
+    background: #FFFFFF;
+    border: 2px solid #CFD2E2;
+    box-sizing: border-box;
+    border-radius: 56px;
+    color: #CFD2E2;
+    letter-spacing: 0.01em;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    padding: 12px 0;
+    margin: 0 15px;
+}
+
+.secondry-btn-two:hover {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-color: #fff;
+}
+
+.full-form-inner .section-btn-container {
+    margin-bottom: 32px;
+}
+
+.section-btn-container .selection-btn {
+    position: relative;
+    background: #FFFFFF;
+    border: 2px solid #CFD2E2;
+    border-radius: 12px;
+    padding: 10px 17px;
+    color: #646D8F;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 205.6%;
+    display: inline-block;
+    margin: 0px 3px 16px;
+}
+
+.section-btn-container .selection-btn.active {
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border: 0px;
+    color: #fff;
+    padding-right: 40px;
+}
+
+.section-btn-container .selection-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    display: block;
+    margin: auto 0;
+    width: 12px;
+    height: 12px;
+    background: url(../images/close.svg) no-repeat;
+    background-size: cover;
+}
+
+.section-btn-container .selection-btn {
+    text-decoration: none;
+}
+
+.full-form-next-btn {
+    width: 100%;
+    padding: 47px 0;
+    background: #F5F6FA;
+    text-align: center;
+}
+
+.full-form-next-btn .next-btn-two {
+    width: 138px;
+    height: 48px;
+    display: block;
+    background: linear-gradient(96.18deg, #79DBA6 7.96%, #62C79E 91.12%);
+    border-radius: 44px;
+    margin: 0 auto;
+    padding: 15px 0;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media(max-width:768px) {
+    .full-form-container .full-form-inner {
+        width: 100%;
+        padding: 50px 20px 0;
+    }
+    .full-form-inner .block-1,
+    .full-form-inner .block-2,
+    .full-form-inner .block-3 {
+        margin-bottom: 30px;
+    }
+    .secondry-btn-two {
+        width: 40%;
+        margin: 0 5px 10px;
+    }
+}
+
+.display-none {
+    display: none;
+}
