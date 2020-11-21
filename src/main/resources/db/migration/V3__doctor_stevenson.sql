@@ -1,0 +1,1 @@
+INSERT INTO DOCTOR (FIRST_NAME, LAST_NAME, EMAIL) VALUE ('Janek', 'Stevenson', 'drjanekstevenson@gmail.com');
