@@ -2,6 +2,7 @@ package com.poclab.coviddiary.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -28,13 +29,15 @@ public class Questionnaire {
   @JoinColumn(name = "TOKEN_UUID", referencedColumnName = "UUID")
   private Token token;
 
-  @Column(name = "HIGH_TEMPERATURE", columnDefinition = "TINYINT")
+  @Type(type = "org.hibernate.type.NumericBooleanType")
+  @Column(name = "HIGH_TEMPERATURE", columnDefinition = "BIT")
   private boolean highTemperature;
 
-  @Column(name = "BREATH_SHORTNESS", columnDefinition = "TINYINT")
+  @Column(name = "BREATH_SHORTNESS", columnDefinition = "BIT")
   private boolean breathShortness;
 
-  @Column(name = "DRY_COUGH", columnDefinition = "TINYINT")
+  @Type(type = "org.hibernate.type.NumericBooleanType")
+  @Column(name = "DRY_COUGH", columnDefinition = "BIT")
   private boolean dryCough;
 
   @Column(name = "SUBMITTED_ON")

@@ -4,6 +4,7 @@ import com.poclab.coviddiary.entity.enums.TokenType;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import java.util.UUID;
 import javax.persistence.Column;
@@ -21,16 +22,16 @@ import javax.persistence.Table;
 public class Token {
 
   @Id
+  @GeneratedValue
+  @Type(type = "uuid-char")
   @Column(name = "UUID", columnDefinition = "CHAR(36)")
-  @GeneratedValue(generator = "uuid2")
-  @GenericGenerator(name = "uuid2", strategy = "uuid2")
   private UUID uuid;
 
   @Enumerated(EnumType.STRING)
   @Column(name = "TYPE", columnDefinition = "ENUM ('QUESTIONNAIRE')")
   private TokenType type = TokenType.QUESTIONNAIRE;
 
-  @Column(name = "STATUS", columnDefinition = "TINYINT")
+  @Column(name = "STATUS", columnDefinition = "BIT")
   private boolean status;
 
   @Column(name = "PATIENT_ID", columnDefinition = "INT(11)")
