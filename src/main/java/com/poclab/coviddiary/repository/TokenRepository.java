@@ -1,14 +1,16 @@
 package com.poclab.coviddiary.repository;
 
-import com.poclab.coviddiary.entity.Doctor;
+import com.poclab.coviddiary.entity.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+public interface TokenRepository extends JpaRepository<Token, UUID> {
 
-  Optional<Doctor> findByEmail(String email);
+  Optional<Token> findByUuidAndStatusTrue(UUID uuid);
+
 
 }

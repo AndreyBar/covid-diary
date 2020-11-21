@@ -1,6 +1,7 @@
 package com.poclab.coviddiary.controller;
 
 import com.poclab.coviddiary.dto.PatientDto;
+import com.poclab.coviddiary.service.QuestionnaireService;
 import com.poclab.coviddiary.service.SignUpService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SignUpController {
 
   private final SignUpService signUpService;
+  private final QuestionnaireService questionnaireService;
 
   @GetMapping("/signup")
   public String getSignUpTemplate(Model model) {
@@ -25,6 +27,7 @@ public class SignUpController {
   public @ResponseBody
   void signUpPatient(PatientDto patientDto) {
     signUpService.signUpPatient(patientDto);
+    questionnaireService.sendQuestionnaireForPatient(patientDto.getEmail());
   }
 
 }

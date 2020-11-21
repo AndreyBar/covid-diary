@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Setter
@@ -21,6 +23,10 @@ public class Questionnaire {
   @Column(name = "ID", columnDefinition = "INT(11)")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
+  @OneToOne
+  @JoinColumn(name = "TOKEN_UUID", referencedColumnName = "UUID")
+  private Token token;
 
   @Column(name = "HIGH_TEMPERATURE", columnDefinition = "TINYINT")
   private boolean highTemperature;
