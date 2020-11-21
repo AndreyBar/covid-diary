@@ -9,6 +9,9 @@ import com.poclab.coviddiary.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -33,7 +36,8 @@ public class SignUpService {
     if (doctor.isEmpty()) {
       throw new NoSuchElementException("There is no doctor with such email");
     }
-    patient.setCreatedOn(new Date());
+    Date now = new Date();
+    patient.setCreatedOn(now.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
     patient.setDoctor(doctor.get());
     patientRepository.save(patient);
   }

@@ -13,6 +13,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Setter
@@ -34,7 +36,8 @@ public class Token {
   @Column(name = "STATUS", columnDefinition = "BIT")
   private boolean status;
 
-  @Column(name = "PATIENT_ID", columnDefinition = "INT(11)")
-  private Long patientId;
+  @ManyToOne
+  @JoinColumn(name = "PATIENT_ID", referencedColumnName = "ID", nullable = false)
+  private Patient patient;
 
 }

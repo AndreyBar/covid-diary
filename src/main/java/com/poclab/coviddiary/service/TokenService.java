@@ -1,6 +1,8 @@
 package com.poclab.coviddiary.service;
 
+import com.poclab.coviddiary.entity.Patient;
 import com.poclab.coviddiary.entity.Token;
+import com.poclab.coviddiary.repository.PatientRepository;
 import com.poclab.coviddiary.repository.TokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ import javax.transaction.Transactional;
 public class TokenService {
 
   private final TokenRepository tokenRepository;
+  private final PatientRepository patientRepository;
 
   public void validateToken(UUID token) {
     if (tokenRepository.findByUuidAndStatusTrue(token).isEmpty()) {
@@ -27,9 +30,9 @@ public class TokenService {
   }
 
   @Transactional
-  public void createTokenForPatient(Long patientId) {
+  public void createTokenForPatient(Patient patient) {
     Token token = new Token();
-    token.setPatientId(patientId);
+    token.setPatient(patient);
     token.setStatus(true);
     tokenRepository.save(token);
   }
