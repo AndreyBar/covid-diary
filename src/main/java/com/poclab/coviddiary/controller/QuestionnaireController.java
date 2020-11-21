@@ -30,7 +30,7 @@ public class QuestionnaireController {
   void submitQuestionnaire(@RequestParam UUID token,
       QuestionnaireDto questionnaireDto) {
     tokenService.validateToken(token);
-    questionnaireService.saveQuestionnaire(questionnaireDto, token);
+    questionnaireService.processQuestionnaire(questionnaireDto, token);
     tokenService.invalidateToken(token);
   }
 
