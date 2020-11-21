@@ -7,12 +7,14 @@ import com.poclab.coviddiary.entity.Token;
 import com.poclab.coviddiary.mapper.QuestionnaireMapper;
 import com.poclab.coviddiary.repository.PatientRepository;
 import com.poclab.coviddiary.repository.QuestionnaireRepository;
+import com.poclab.coviddiary.repository.TokenRepository;
 import com.poclab.coviddiary.util.EmailUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 import javax.transaction.Transactional;
 
 @Service
@@ -22,6 +24,7 @@ public class QuestionnaireService {
   private final EmailUtils emailUtils;
   private final TokenService tokenService;
   private final PatientRepository patientRepository;
+  private final TokenRepository tokenRepository;
   private final QuestionnaireRepository questionnaireRepository;
   private final QuestionnaireMapper questionnaireMapper;
 
@@ -38,9 +41,9 @@ public class QuestionnaireService {
   }
 
   @Transactional
-  public Questionnaire saveQuestionnaire(QuestionnaireDto questionnaireDto, Token token) {
+  public Questionnaire saveQuestionnaire(QuestionnaireDto questionnaireDto, UUID token) {
     Questionnaire questionnaire = questionnaireMapper.toEntity(questionnaireDto);
-    questionnaire.setToken(token);
+    questionnaire.setToken(tokenRepository.getOne(token));
 
     questionnaireRepository.save(questionnaire);
     return questionnaire;

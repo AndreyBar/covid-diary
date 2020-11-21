@@ -1,6 +1,7 @@
 package com.poclab.coviddiary.controller;
 
 import com.poclab.coviddiary.dto.QuestionnaireDto;
+import com.poclab.coviddiary.service.QuestionnaireService;
 import com.poclab.coviddiary.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import java.util.UUID;
 public class QuestionnaireController {
 
   private final TokenService tokenService;
+  private final QuestionnaireService questionnaireService;
 
   @GetMapping("/questionnaire")
   public String getQuestionnaire(@RequestParam UUID token) {
@@ -28,6 +30,8 @@ public class QuestionnaireController {
   void submitQuestionnaire(@RequestParam UUID token,
       QuestionnaireDto questionnaireDto) {
     tokenService.validateToken(token);
+    questionnaireService.saveQuestionnaire(questionnaireDto, token);
+    tokenService.invalidateToken(token);
   }
 
 }

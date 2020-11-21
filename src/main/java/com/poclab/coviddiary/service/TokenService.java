@@ -21,12 +21,16 @@ public class TokenService {
   }
 
   @Transactional
-  public Token createTokenForPatient(Long patientId) {
+  public void invalidateToken(UUID token) {
+    Token tokenEntity = tokenRepository.getOne(token);
+    tokenEntity.setStatus(false);
+  }
+
+  @Transactional
+  public void createTokenForPatient(Long patientId) {
     Token token = new Token();
     token.setPatientId(patientId);
     token.setStatus(true);
     tokenRepository.save(token);
-    return token;
   }
-
 }
