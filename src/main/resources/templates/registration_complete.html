@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Covid Diary</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/main.css}">
+</head>
+<style type="text/css">
+    .verify-form-col .input-block label {
+        width: 100px;
+    }
+    img {
+        width: 180px;
+        height: 150px;
+    }
+</style>
+
+<body>
+
+    <!-- Get Started -->
+    <div class="getstarted">
+        <!-- ./END  -->
+        <div class="getstarted-col">
+            <img th:src="@{assets/images/logo.png}" alt="Logo">
+            <h3 style="margin-top: 10%;">Patient Registration</h3>
+            <div class="info">
+                <p>Recommendations provided do not constitude as medical advice and should not be used to diagnose or treat medical conditions</p>
+            </div>
+            <div class="btn-block">
+                <a href="javascript:void(0);" class="custom-btn getStart">Get Started</a>
+            </div>
+            <div class="footer">
+                <p>The protection of your personal data is a high priority. Your information will not be disclosed to third parties without your express consent</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form steps -->
+    <div class="form-container firstStep display-none">
+        <!-- ./END  -->
+        <div class="form-data-wrapper">
+            <!-- step eight -->
+            <div class="form-data-inner stepEightInner">
+
+                <div class="selection-col">
+                    <div class="app-message-col">
+                        <img th:src="@{assets/images/logo.png}" alt="logo">
+                        <p class="app-text">Thank you Marco Button for completing the registration.</p>
+                        <p class="app-text">Your GP (Doctor) now will be informed about your health state.<p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script th:src="@{assets/js/jquery.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/main.js}"></script>
+</html>

@@ -23,13 +23,16 @@ public class SignUpService {
   private final DoctorRepository doctorRepository;
 
   @Transactional
-  public void signUpPatient(PatientDto patientDto) {
-    Optional<Doctor> doctor = doctorRepository.findByEmail(patientDto.getDoctorEmail());
+  public void signUpDoctor(Doctor doctor) {
+    doctorRepository.save(doctor);
+  }
+
+  @Transactional
+  public void signUpPatient(Patient patient) {
+    Optional<Doctor> doctor = doctorRepository.findByEmail(patient.getDoctor().getEmail());
     if (doctor.isEmpty()) {
       throw new NoSuchElementException("There is no doctor with such email");
     }
-
-    Patient patient = patientMapper.toEntity(patientDto);
     patient.setCreatedOn(new Date());
     patient.setDoctor(doctor.get());
     patientRepository.save(patient);

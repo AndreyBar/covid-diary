@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Covid Diary</title>
-    <link rel="stylesheet" href="assets/css/boostrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/main.css}">
 </head>
 <style type="text/css">
     img {
@@ -22,13 +22,13 @@
         <header class="header">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                    <a href="#"><img th:src="@{assets/images/logo.png}" alt="Logo"></a>
                 </div>
             </div>
         </header>
         <!-- ./END  -->
         <div class="getstarted-col">
-            <img src="assets/images/logo.png" alt="Logo">
+            <img th:src="@{assets/images/logo.png}" alt="Logo">
             <div class="user-data">
                 <div class="user-name">
                     <p>Marco Botton</p>
@@ -56,7 +56,7 @@
         <header class="header">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                    <a href="#"><img th:src="@{assets/images/logo.png}" alt="Logo"></a>
                 </div>
             </div>
         </header>
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="nex-back-actionblock stepOneNextBackSec display-none">
-                    <button class="next-btn nextStepOne">Next</button>
+                    <button type="button" class="next-btn nextStepOne">Next</button>
                     <a href="javascript:void(0);" class="back-btn backGetstart">Back</a>
                 </div>
             </div>
@@ -203,7 +203,7 @@
 
                 <div class="selection-col">
                     <div class="app-message-col">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img th:src="@{assets/images/logo.png}" alt="logo">
                         <p class="app-text">Thank you Marco Button for completing the health check.</p>
                         <p class="app-text">I am glad that you don't have any of these symptoms, but please monitor your condition regularly and measure your temperature twice a day.<p>
                         <div class="app-date_time">
@@ -218,7 +218,7 @@
 
                 <div class="selection-col">
                     <div class="app-message-col">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img th:src="@{assets/images/logo.png}" alt="logo">
                         <p class="app-text">Thank you Marco Button for completing the health check.</p>
                         <p class="app-text">Unfortunately you are not getting better, please call your GP or emergency department (outside of GP hours) and follow their instructions.<p>
                         <div class="app-date_time">
@@ -233,7 +233,7 @@
 
                 <div class="selection-col">
                     <div class="app-message-col">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img th:src="@{assets/images/logo.png}" alt="logo">
                         <p class="app-text">Thank you Marco Button for completing the health check.</p>
                         <p class="app-text">Call 155 immediately and follow the operator's instructions.<p>
 
@@ -249,10 +249,11 @@
 
 
 </body>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<script th:src="@{assets/js/jquery.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/main.js}"></script>
+<script>
     var age = 70;
 
     var shorness = false;
@@ -264,7 +265,6 @@
     var showEasy = false;
     var showMedium = false;
     var showEmergency = false;
-
 
     function shortnessYes() {
         shorness = true;
@@ -495,6 +495,7 @@
         }
     });
     $(".nextStepSeven").click(function() {
+        // todo: submit form
         $(".getstarted").hide();
         $(".firstStep").show();
         $(".stepOneInner").hide();

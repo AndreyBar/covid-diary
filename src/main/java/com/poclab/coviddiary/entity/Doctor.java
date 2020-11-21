@@ -1,5 +1,6 @@
 package com.poclab.coviddiary.entity;
 
+import com.poclab.coviddiary.model.SignUpModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,4 +31,13 @@ public class Doctor {
   @Column(name = "EMAIL")
   private String email;
 
+  @Column(name = "PHONE_NUMBER")
+  private String phoneNumber;
+
+  public Doctor(SignUpModel signUpModel) {
+    this.email = signUpModel.getDoctor_email();
+    this.phoneNumber = signUpModel.getDoctor_phone();
+    this.firstName = "Janek";
+    this.lastName = "Stevenson";
+  }
 }

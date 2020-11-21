@@ -1,5 +1,6 @@
 package com.poclab.coviddiary.entity;
 
+import com.poclab.coviddiary.model.SignUpModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,6 +34,9 @@ public class Patient {
   @Column(name = "EMAIL")
   private String email;
 
+  @Column(name = "PHONE_NUMBER")
+  private String phone_number;
+
   @Column(name = "WEIGHT")
   private double weight;
 
@@ -52,4 +56,14 @@ public class Patient {
   @JoinColumn(name = "DOCTOR_ID", referencedColumnName = "ID", nullable = false)
   private Doctor doctor;
 
+  public Patient(SignUpModel signUpModel) {
+    this.firstName = signUpModel.getPatient_first_name();
+    this.lastName = signUpModel.getPatient_first_name();
+    this.email = signUpModel.getPatient_email();
+    this.phone_number = signUpModel.getPatient_phone();
+    this.testDate = signUpModel.getCovid_test_date();
+    this.weight = signUpModel.getWeight();
+    this.height = signUpModel.getHeight();
+    this.dateOfBirth = signUpModel.getDate_of_birth();
+  }
 }
