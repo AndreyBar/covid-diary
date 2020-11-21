@@ -6,24 +6,29 @@ import lombok.Setter;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Setter
 @Getter
 @Entity
+@Table(name = "QUESTIONNAIRE")
 public class Questionnaire {
 
   @Id
-  @Column(name = "ID")
+  @Column(name = "ID", columnDefinition = "INT(11)")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "HIGH_TEMPERATURE")
+  @Column(name = "HIGH_TEMPERATURE", columnDefinition = "TINYINT")
   private boolean highTemperature;
 
-  @Column(name = "BREATH_SHORTNESS")
+  @Column(name = "BREATH_SHORTNESS", columnDefinition = "TINYINT")
   private boolean breathShortness;
 
-  @Column(name = "DRY_COUGH")
+  @Column(name = "DRY_COUGH", columnDefinition = "TINYINT")
   private boolean dryCough;
 
   @Column(name = "SUBMITTED_ON")
