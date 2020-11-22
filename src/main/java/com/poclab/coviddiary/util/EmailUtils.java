@@ -6,6 +6,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
+import javax.mail.internet.InternetAddress;
+
 @Component
 @RequiredArgsConstructor
 public class EmailUtils {
@@ -15,7 +17,7 @@ public class EmailUtils {
   public void sendEmail(String to, String subject, String text) {
     emailSender.send(mimeMessage -> {
       MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-      message.setFrom("yourcoviddiary@gmail.com");
+      message.setFrom(new InternetAddress("yourcoviddiary@gmail.com", "Your COVID Diary"));
       message.setTo(to);
       message.setSubject(subject);
       message.setText(text, true);
