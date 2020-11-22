@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Covid Diary</title>
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" type="text/css" th:href="@{assets/css/boostrap.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{assets/css/main.css}">
 </head>
 <style type="text/css">
     .verify-form-col .input-block label {
         width: 100px;
-    } 
+    }
     img {
         width: 180px;
         height: 150px;
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <div class="selection-col">
-                    <h3>Please provide your requisites</h3>
+                    <h3>Please provide required information</h3>
 
                     <div class="verify-form-col">
                             <div class="input-block">
@@ -67,11 +69,13 @@
                             </div>
                             <div class="input-block">
                                 <label for="">Email</label>
-                                <input type="email" th:field="*{patient_email}" placeholder="" id="email" required>
+                                <input type="text" th:field="*{patient_email}" placeholder="" id="email" required>
                             </div>
                             <div class="input-block">
                                 <label for="">Phone number</label>
                                 <input type="number" th:field="*{patient_phone}" placeholder="" id="phone_number" required>
+                            </div>
+                            <div class="input-block">
                                 <label id="validator_1" style="color: red; width: 200px; margin-top: 15px;">Please fill all fields</label>
                             </div>
                     </div>
@@ -81,7 +85,6 @@
                 </div>
 
                 <div class="nex-back-actionblock stepOneNextBackSec">
-                    <button type="button" class="next-btn nextStepOne">Next</button>
                     <a href="javascript:void(0);" class="back-btn backGetstart">Back</a>
                 </div>
             </div>
@@ -108,12 +111,24 @@
                                 <input type="number" th:field="*{height}" placeholder="" id="height" required>
                             </div>
                             <div class="input-block">
-                                <label style="width: 200px;" for="">Your Date of birth</label>
-                                <input type="text" th:field="*{date_of_birth}" placeholder="" id="date_of_birth" required>
+                                <div class="input-group date" style="display: block;" data-provide="datepicker">
+                                    <label style="width: 200px;" for="">Your Date of birth</label>
+                                    <input type="text" class="form-group" th:field="*{date_of_birth}" placeholder="" id="date_of_birth" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="input-block">
-                                <label style="width: 200px;" for="">When did you get your Covid-19 positive test result?</label>
-                                <input type="text" th:field="*{covid_test_date}" placeholder="" id="covid_test_date" required>
+                                <div class="input-group date" style="display: block;" data-provide="datepicker">
+                                    <label style="width: 200px;" for="">When did you get your Covid-19 positive test result?</label>
+                                    <input type="text" class="form-group"  th:field="*{covid_test_date}" placeholder="" id="covid_test_date" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-block">
                                 <label id="validator_2" style="color: red; width: 200px; margin-top: 15px;">Please fill all fields</label>
                             </div>
                     </div>
@@ -123,7 +138,6 @@
                 </div>
 
                 <div class="nex-back-actionblock stepTwoNextBackSec">
-                    <a href="javascript:void(0);" class="next-btn nextStepTwo">Next</a>
                     <a href="javascript:void(0);" class="back-btn backStepTwoButton">Back</a>
                 </div>
             </div>
@@ -143,11 +157,13 @@
                     <div class="verify-form-col">
                             <div class="input-block">
                                 <label for="">Doctor's Email</label>
-                                <input type="email" th:field="*{doctor_email}"  placeholder="" id="doc_email" required>
+                                <input type="text" th:field="*{doctor_email}"  placeholder="" id="doc_email" required>
                             </div>
                             <div class="input-block">
                                 <label style="width:200px;" for="">Doctor's Phone Number</label>
                                 <input type="number" th:field="*{doctor_phone}"  placeholder="" id="doc_phone" required>
+                            </div>
+                            <div class="input-block">
                                 <label id="validator_3" style="color: red; width: 200px; margin-top: 15px;">Please fill all fields</label>
                             </div>
                     </div>
@@ -157,7 +173,6 @@
                 </div>
 
                 <div class="nex-back-actionblock stepThreeNextBackSec">
-                    <a href="javascript:void(0);" class="next-btn nextStepThree">Next</a>
                     <a href="javascript:void(0);" class="back-btn backStepThreeButton">Back</a>
                 </div>
             </div>
@@ -177,7 +192,7 @@
                         <p>I verify the information I have provided on this form is truthful and accurate</p>
 
                         <div class="verify-btn  mt-0">
-                            <a href="javascript:void(0);" class="custom-btn nextStepSeven">Submit</a>
+                            <button type="submit" class="custom-btn nextStepSeven">Submit</button>
                         </div>
 
                     </div>
@@ -194,11 +209,15 @@
 
 </form>
 </body>
-<script th:src="@{assets/js/jquery.min.js}"></script>
+<!--<script th:src="@{assets/js/jquery.min.js}"></script>-->
 <script th:src="@{assets/js/popper.min.js}"></script>
-<script th:src="@{assets/js/bootstrap.min.js}"></script>
-<script th:src="@{assets/js/main.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--<script th:src="@{assets/js/bootstrap.min.js}"></script>-->
 <script>
+    $('#covid_test_date').datepicker();
+    $('#date_of_birth').datepicker();
     $(".getStart").click(function() {
         $(".getstarted").hide();
         $(".firstStep").show();
@@ -287,15 +306,6 @@
         $(".stepTwoInner").hide();
         $(".stepThreeInner").show();
         $(".stepSevenInner").hide();
-    });
-    $(".nextStepSeven").click(function() {
-        $(".getstarted").hide();
-        $(".firstStep").show();
-        $(".stepOneInner").hide();
-        $(".stepTwoInner").hide();
-        $(".stepThreeInner").hide();
-        $(".stepSevenInner").hide();
-        $("#form_sign_up").submit();
     });
 
 

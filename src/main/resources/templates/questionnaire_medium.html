@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Covid Diary</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/boostrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/main.css}">
 </head>
+<style type="text/css">
+    .verify-form-col .input-block label {
+        width: 100px;
+    }
+    img {
+        width: 180px;
+        height: 150px;
+    }
+</style>
+
 <body>
 
+
+<!-- Form steps -->
+<div class="form-container firstStep">
+    <!-- ./END  -->
+    <div class="form-data-wrapper">
+        <!-- step nine -->
+        <div class="form-data-inner stepNineInner">
+
+            <div class="selection-col">
+                <div class="app-message-col">
+                    <img th:src="@{assets/images/logo.png}" alt="logo">
+                    <p class="app-text">Thank you <span th:text="${patientName}"></span> for completing the health check.</p>
+                    <p class="app-text">Unfortunately you are not getting better, please call your GP or emergency department (outside of GP hours) and follow their instructions.<p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+<script th:src="@{assets/js/jquery.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/main.js}"></script>
 </html>

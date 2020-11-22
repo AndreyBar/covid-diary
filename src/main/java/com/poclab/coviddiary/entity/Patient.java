@@ -1,7 +1,9 @@
 package com.poclab.coviddiary.entity;
 
 import com.poclab.coviddiary.model.SignUpModel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -22,6 +24,8 @@ import javax.persistence.Table;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "PATIENT")
 public class Patient {
 
@@ -67,7 +71,7 @@ public class Patient {
 
   public Patient(SignUpModel signUpModel) {
     this.firstName = signUpModel.getPatient_first_name();
-    this.lastName = signUpModel.getPatient_first_name();
+    this.lastName = signUpModel.getPatient_last_name();
     this.email = signUpModel.getPatient_email();
     this.phone_number = signUpModel.getPatient_phone();
     this.testDate = signUpModel.getCovid_test_date().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();

@@ -1,7 +1,9 @@
 package com.poclab.coviddiary.entity;
 
 import com.poclab.coviddiary.model.SignUpModel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -14,6 +16,8 @@ import javax.persistence.Table;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "DOCTOR")
 public class Doctor {
 

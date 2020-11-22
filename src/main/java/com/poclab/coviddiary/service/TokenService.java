@@ -17,10 +17,8 @@ public class TokenService {
   private final TokenRepository tokenRepository;
   private final PatientRepository patientRepository;
 
-  public void validateToken(UUID token) {
-    if (tokenRepository.findByUuidAndStatusTrue(token).isEmpty()) {
-      throw new SecurityException("Token not valid");
-    }
+  public Token validateToken(UUID token) {
+    return tokenRepository.getOne(token);
   }
 
   @Transactional
@@ -30,10 +28,10 @@ public class TokenService {
   }
 
   @Transactional
-  public void createTokenForPatient(Patient patient) {
+  public Token createTokenForPatient(Patient patient) {
     Token token = new Token();
     token.setPatient(patient);
     token.setStatus(true);
-    tokenRepository.save(token);
+    return tokenRepository.save(token);
   }
 }

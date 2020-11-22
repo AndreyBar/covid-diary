@@ -692,12 +692,6 @@ a {
     }
 }
 
-@media(min-width:768px) {
-    .next-btn-mobile {
-        display: none !important;
-    }
-}
-
 .next-btn-mobile {
     width: 100%;
     text-align: center;

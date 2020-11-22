@@ -42,6 +42,9 @@ public class Questionnaire {
   @Column(name = "DRY_COUGH", columnDefinition = "BIT")
   private boolean dryCough;
 
+  @Column(name = "PROPERTIES")
+  private String properties;
+
   @Column(name = "SUBMITTED_ON")
   private LocalDateTime submittedOn;
 

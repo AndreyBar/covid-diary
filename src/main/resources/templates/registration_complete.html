@@ -20,26 +20,9 @@
 
 <body>
 
-    <!-- Get Started -->
-    <div class="getstarted">
-        <!-- ./END  -->
-        <div class="getstarted-col">
-            <img th:src="@{assets/images/logo.png}" alt="Logo">
-            <h3 style="margin-top: 10%;">Patient Registration</h3>
-            <div class="info">
-                <p>Recommendations provided do not constitude as medical advice and should not be used to diagnose or treat medical conditions</p>
-            </div>
-            <div class="btn-block">
-                <a href="javascript:void(0);" class="custom-btn getStart">Get Started</a>
-            </div>
-            <div class="footer">
-                <p>The protection of your personal data is a high priority. Your information will not be disclosed to third parties without your express consent</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Form steps -->
-    <div class="form-container firstStep display-none">
+    <div class="form-container firstStep">
         <!-- ./END  -->
         <div class="form-data-wrapper">
             <!-- step eight -->
@@ -48,8 +31,8 @@
                 <div class="selection-col">
                     <div class="app-message-col">
                         <img th:src="@{assets/images/logo.png}" alt="logo">
-                        <p class="app-text">Thank you Marco Button for completing the registration.</p>
-                        <p class="app-text">Your GP (Doctor) now will be informed about your health state.<p>
+                        <p class="app-text">Thank you <span th:text="${patient_name}"></span> for completing the registration.</p>
+                        <p class="app-text" style="width: 80%;">Your GP (Doctor) now will be informed about your health state.<p>
 
                     </div>
                 </div>

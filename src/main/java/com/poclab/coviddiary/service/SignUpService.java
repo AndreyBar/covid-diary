@@ -31,15 +31,15 @@ public class SignUpService {
   }
 
   @Transactional
-  public void signUpPatient(Patient patient) {
-    Optional<Doctor> doctor = doctorRepository.findByEmail(patient.getDoctor().getEmail());
-    if (doctor.isEmpty()) {
+  public Patient signUpPatient(Patient patient) {
+    Doctor doctor = doctorRepository.findByEmail(patient.getDoctor().getEmail()).get(0);
+    if (doctor == null) {
       throw new NoSuchElementException("There is no doctor with such email");
     }
     Date now = new Date();
     patient.setCreatedOn(now.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
-    patient.setDoctor(doctor.get());
-    patientRepository.save(patient);
+    patient.setDoctor(doctor);
+    return patientRepository.save(patient);
   }
 
 }
