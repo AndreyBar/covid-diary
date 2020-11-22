@@ -1,24 +1,14 @@
 package com.poclab.coviddiary.config;
 
-public class ApplicationConfig {
+//@Configuration
+public class ApplicationConfig /*extends WebMvcConfigurationSupport */ {
 
-//  @Bean
-//  public ITemplateResolver thymeleafTemplateResolver() {
-//    ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
-//    templateResolver.setPrefix("templates/");
-//    templateResolver.setSuffix(".html");
-//    templateResolver.setTemplateMode("HTML");
-//    templateResolver.setCharacterEncoding("UTF-8");
-//    return templateResolver;
+//  @Override
+//  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//    registry.addResourceHandler("/**")
+//        .addResourceLocations("classpath:/static/assets/css")
+//        .addResourceLocations("classpath:/static/assets/fonts")
+//        .addResourceLocations("classpath:/static/assets/images")
+//        .addResourceLocations("classpath:/static/assets/js");
 //  }
-
-//  @Bean
-//  public SpringTemplateEngine thymeleafTemplateEngine(ITemplateResolver templateResolver) {
-//    SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-//    templateEngine.setTemplateResolver(templateResolver);
-////    templateEngine.setTemplateEngineMessageSource(emailMessageSource());
-//    return templateEngine;
-//  }
-
-
 }
